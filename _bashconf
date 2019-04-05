@@ -1,0 +1,43 @@
+# Add follow code to ~/.bashrc
+#
+# if [ -e ~/.bashconf ]; then↲
+#   . ~/.bashconf
+# fi↲
+# if [ -e ~/.bashconf.local ]; then↲
+#   . ~/.bashconf.local
+# fi↲
+
+# Prompt
+if [ -z "$(declare -F __git_ps1)" ]; then
+  alias __git_ps1=":"
+fi
+export PS1="\[\e[32m\]\u@\h:\w\[\e[33m\]\$(__git_ps1)\n\[\e[1;34m\]\\$\[\e[0m\] "
+export PS2="\[\e[1;34m\]>\[\e[0m\] "
+
+# Environment variables
+export EDITIOR='vim'
+export GO111MODULE=on
+export GOPATH=${HOME}/go
+export PATH=/usr/local/go/bin:${GOPATH}/bin:${PATH}
+export PATH=${HOME}/bin:${PATH}
+
+# Navigation
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+alias .....="cd ../../../.."
+
+# List files
+alias l='ls -F'
+alias la='ls -aF'
+alias ll='ls -lhF'
+alias lla='ls -lahF'
+
+# Shortcut
+alias g='git'
+alias v='vi'
+alias h='history'
+alias tm='tmux -2'
+alias gcd='cd $(ghq list -p | peco)'
+alias gls='ghq list'
+
