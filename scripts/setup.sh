@@ -14,10 +14,3 @@ for f in $(find ${src_dir} -maxdepth 1 -name "_*" -not -name "_*.example"); do
   dst_file=${dst_dir}/${filename/_/.}
   exec ln -sf ${src_file} ${dst_file}
 done
-
-for f in $(find ${src_dir} -maxdepth 1 -name "_*.example"); do
-  filename=$(basename $f)
-  src_file=${src_dir}/${filename}
-  dst_file=${dst_dir}/${filename/_/.}
-  exec cp ${src_file} ${dst_file}
-done

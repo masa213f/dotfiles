@@ -1,11 +1,11 @@
-# Add follow code to ~/.bashrc
+# Add the following code to ~/.bashrc
 #
-# if [ -e ~/.bashconf ]; then↲
+# if [ -e ~/.bashconf ]; then
 #   . ~/.bashconf
-# fi↲
-# if [ -e ~/.bashconf.local ]; then↲
+# fi
+# if [ -e ~/.bashconf.local ]; then
 #   . ~/.bashconf.local
-# fi↲
+# fi
 
 # Prompt
 if [ -z "$(declare -F __git_ps1)" ]; then
@@ -40,4 +40,3 @@ alias h='history'
 alias tm='tmux -2'
 alias gcd='cd $(ghq list -p | peco)'
 alias gls='ghq list'
-
